@@ -1,0 +1,44 @@
+@use 'base/variables'as v;
+@use 'base/mixins'as m;
+
+.delivery {
+    padding: 5rem 0;
+
+    &__heading {
+        text-align: center;
+        color: v.$secondary;
+    }
+
+    &__grid{
+        @include m.tablet {
+            @include m.grid(2, 5rem)
+        }
+    }
+
+    &__image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__contents{
+        @include m.tablet {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__text{
+        margin-bottom: 1rem;
+        line-height: 1.5;
+        color: v.$secondary;
+    }
+
+    &__cta{
+        @include m.button(v.$primary, v.$white);
+        @include m.tablet {
+            margin-top: auto;
+            width: fit-content;
+        }
+    }
+}
